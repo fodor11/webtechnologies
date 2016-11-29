@@ -10,8 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 	
-	@RequestMapping(value={"", "/", "/home", "/index"})
+	@RequestMapping(value={"", "/", "/home"})
 	public ModelAndView homePage(){
+		ModelAndView result = new ModelAndView("home");
+		return result;
+	}
+	
+	@RequestMapping(value={"/index"})
+	public ModelAndView indexPage(){
 		ModelAndView result = new ModelAndView("index");
 		return result;
 	}

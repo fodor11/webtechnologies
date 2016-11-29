@@ -1,0 +1,104 @@
+<html>
+<head>
+	<link href="css/mystlye.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js">	</script>
+	<script type="text/javascript">
+	console.log('head');
+	$(document).ready(function(){
+	 	var cars = ['Nissan', 'Honda', 'Subaru'];
+	 	var list =$('<ul></ul>');
+		$.each(cars, function(carKey, carValue){
+			//alert(carValue);
+			$(list).append('<li>'+carValue+'</li>');
+		});
+		$('#content').append(list);
+		
+		
+		$.each($('.menuButton'), function(mbIndex, mbValue){			
+			$(mbValue).click(function(event){
+				event.preventDefault();
+				alert($(this).find('a').text()+'--->'+$(this).find('a').attr('href'));
+				$('#content').load($(this).find('a').attr('href') );
+			});
+		});
+		
+	});
+	</script>
+</head>
+<body>
+	<div id="header">
+		<div id="banner">Baaaang</div>
+		<div id="menuBar">
+			<span class="menuButton"><a href="home">Home</a></span>
+			<span class="menuButton"><a href="search">Search</a></span>
+			<span class="menuButton"><a href="no">No</a></span>
+			<span class="menuButton"><a href="address">Address</a></span>
+		</div>
+	</div>
+	<div id="pageBody">
+	<div id="news">
+		<div class="newsBubble">
+			<h1>Title1</h1>
+			<p>Teaser</p>
+		</div>
+		<div class="newsBubble">
+			<h1>Title2</h1>
+			<p>Teaser</p>
+		</div>
+		<div class="newsBubble">
+			<h1>Title5</h1>
+			<p>Teaser</p>		
+		</div>
+	</div>
+	<div id="content">asdf</div>
+	</div>
+	<div id=footer>footer</div>
+</body>
+<script type="text/javascript">
+	console.log('post body');
+	var cars = ['Nissan', 'Honda', 'Subaru'];
+	var content = document.getElementById("content");
+	
+	var carsText = '<ul>';
+	for (var i = 0; i < cars.length; i++) {
+		carsText += '<li>'+cars[i]+'</li>';
+	}
+	
+	carsText += '</ul>';
+	
+	content.innerHTML='<h1>Cars</h1>' + carsText;
+	
+	var data_file="http://localhost:8080/librarian-web/authors";
+	var http_request = new XMLHttpRequest();
+	
+	
+		http_request.onreadystatechange = function(){
+			
+            if (http_request.readyState == 4  ){
+               // Javascript function JSON.parse to parse JSON data
+               
+               var jsonObj = JSON.parse(http_request.responseText);
+               var tableContent;
+               for (var author in jsonObj) {
+				//console.log(jsonObj[author]['name']);
+				tableContent += '<tr><td>'+ jsonObj[author]['name'] +'</td><td>'+jsonObj[author]['nationality']+'</td></tr>';
+				}
+               content.innerHTML += '<h1>Authors</h1><table>'+
+					'<tr><th>Name</th><th>Nationality</th></tr>'+
+					'<tr><td>asdf</td><td>fdsa</td></tr>'+tableContent;
+               content.innerHTML += "</table>"
+               // jsonObj variable now contains the data structure and can
+//                // be accessed as jsonObj.name and jsonObj.country.
+//                document.getElementById("Name").innerHTML = jsonObj.name;
+//                document.getElementById("Country").innerHTML = jsonObj.country;
+            }
+         }
+			
+
+         http_request.open("GET", data_file, true);
+         http_request.send();
+	
+	
+</script>
+</html>
+<!-- author lista + felvétel, könyv listázás -->
