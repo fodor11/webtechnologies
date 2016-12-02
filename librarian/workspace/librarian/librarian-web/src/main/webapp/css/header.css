@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+	#menuBar{
+		background-color: #262626;
+		height: 50px;
+			}
+	#menuBar a{
+			color: white;
+			text-decoration: none;
+		}
+		
+	#menuBar .menuButton{
+		display: inline-block;
+		width: 100px;
+		height:35px;
+		margin: auto;
+		padding-top: 15px;
+		text-align: center;
+		transition: background 0.6s;
+	}
+	
+	#menuBar .menuButton:HOVER{
+		background: #888a85;
+	}
+	#header{
+			}
