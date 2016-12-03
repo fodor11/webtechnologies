@@ -3,12 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Librarian</title>
+	
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	
+	
 	<link href="css/header.css" type="text/css" rel="stylesheet">
+	<link href="css/content.css" type="text/css" rel="stylesheet">
+	
+	
 	<script type="text/javascript">
+	
 		//setting the width for the header picture
 		function headerPicResize () {
-			$('#headerpic').css('width', $('#menuBar').width());
+			if ((window.innerWidth) > ($('#content').width()))
+			{
+				$('#headerpic').css('width', window.innerWidth);
+			}
+			else 
+			{
+				$('#headerpic').css('width', $('#content').width());
+			}
 		}
 		window.addEventListener("resize", function(){
 			headerPicResize();
@@ -27,12 +41,26 @@
 	</script>
 </head>
 <body>
-	<div id="menuBar">
-		<div class="menuButton"><a href="">MB1</a></div>
-		<div class="menuButton"><a href="">MB1</a></div>
+	<div class="fixed">
+		<div id="pageTitle">Librarian</div>
+		<div id="menuBar">	
+			<div class="menuButton"><a href="home">Authors</a></div><!-- 
+		 --><div class="menuButton"><a href="">MB1</a></div>
+		</div>
 	</div>
 	<div id="header">
 		<img id="headerpic" alt="headerSkull" src="img/headerSkull.jpg">
+	</div>
+	<div id="content">
+		<h1>Title</h1>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+		
 	</div>
 </body>
 </html>
