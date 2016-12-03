@@ -1,0 +1,34 @@
+<script>
+$.getJSON('books', function(data){
+	var table = $('<table></table>');
+	$(table).append('<tr><th>Title</th><th>Genres</th><th>Authors</th></tr>');
+	
+	$.each(data, function(key, value){
+		var row =$('<tr></tr>');
+		var titleCell=$('<td>'+value['title']+'</td>');
+		
+		var genresCell=$('<td></td>');
+		var genresList=$('<ul></ul>');
+		$.each(value['genres'], function(key, value){
+			genresList.append('<li>'+value+'</li>');
+		});
+		genresList.append('<li>and so on ...</li>');
+		$(genresCell).append(genresList);
+		
+		var authorsCell=$('<td></td>');
+		var authorList=$('<ul></ul>');
+		$.each(value['authors'], function(key, value){
+			authorList.append('<li>'+value['name']+'</li>');
+		});
+		$(authorsCell).append(authorList);
+		
+		$(row).append(titleCell);
+		$(row).append(genresCell);
+		$(row).append(authorsCell);
+		$(table).append(row);
+		
+	});	
+ 	$('#content').append("<h1>Books</h1>");
+	$('#content').append(table);
+});
+</script>

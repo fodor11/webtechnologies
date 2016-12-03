@@ -13,13 +13,15 @@
 	#content{
 		margin-left: auto;
 		margin-right: auto;
-		
+		margin-bottom: 30px;
 		width: 800px;
 		color:  #593F2F;
 		background-color: #F2DCC9;
 		border: 0px;
 	}
-	
+	#content p{	
+		padding:10px;
+	}
 	#content h1{
 		font-size: 3em;
 		text-align: center;
@@ -28,8 +30,10 @@
 	}
 	
 	#content table{
-		padding: 20px;
-		border: 0px;
+		
+		border-collapse: collapse;
+		margin: auto;
+		margin-bottom: 20px;
 	}
 	#content th{
 		text-align: left;
@@ -45,5 +49,15 @@
 	#content table tr:nth-child(odd){
 		background-color: #D9AA8F;
 	}
+	#content ul{
+		list-style-type: none;
+	}
 	
+	#footer{
+		text-align: right;
+		font-size: 1.5em;
+		color: #F2DCC9;
+		margin-right: 20px;
+		margin-bottom: 10px;
+	}
 	

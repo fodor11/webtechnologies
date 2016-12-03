@@ -1,17 +1,25 @@
 <script>
+function dateFormatter(data){
+	var ret = ''+data.getFullYear()+'. '+data.getMonth()+'. '+data.getDate()+'.';
+	return ret;
+}
+
 $.getJSON('authors', function(data){
 	var table = $('<table></table>');
-	$(table).append('<tr><th>Name</th><th>Nation</th></tr>');
+	$(table).append('<tr><th>Name</th><th>Nation</th><th>Birth Date</th></tr>');
 	
 	$.each(data, function(key, value){
 		var row =$('<tr></tr>');
 		var nameCell=$('<td>'+value['name']+'</td>');
 		var nationCell=$('<td>'+value['nationality']+'</td>');
+		var birthdateCell=$('<td>'+dateFormatter(new Date(value['birthDate']))+'</td>');
 		$(row).append(nameCell);
 		$(row).append(nationCell);
+		$(row).append(birthdateCell);
 		$(table).append(row);
 		
-	});
+	});	
+ 	$('#content').append("<h1>Authors</h1>");
 	$('#content').append(table);
 });
 </script>
