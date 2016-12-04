@@ -1,0 +1,72 @@
+<!-- authorID, name, nationality, birthDate -->
+<html>
+<head>
+<script>
+	function sendAuthor(){
+		
+	}
+	function dateFormatter(data){
+		var ret = data.getFullYear()+'-';
+		if((data.getMonth()+1) < 10)
+		{
+			ret+=('0'+(data.getMonth()+1)+'-');
+		}
+		else
+		{
+			ret+=(data.getMonth()+1)+'-';
+		}
+		if(data.getDate()<10)
+		{
+			ret+=('0'+data.getDate());
+		}
+		else
+		{
+			ret+=(data.getDate());
+		}
+		
+		return ret;
+	}
+	$('#context').ready(function(){		
+		var objectId = $('#objectId').text();
+		$('#objectId').text(0);
+		if (objectId > 0)
+		{
+			$.getJSON('authors', function(data){
+				$.each(data, function(key, value){
+					if (value['authorID'] == objectId)
+					{
+						$('input[name="name"]').val(value['name']);
+						$('input[name="nationality"]').val(value['nationality']);
+						$('input[name="birthdate"]').val(dateFormatter(new Date(value['birthDate'])));
+						$('input[name="id"]').val(objectId);
+					}					
+				});	
+			});			
+		}
+	});
+</script>
+</head>
+<body>
+<form>
+	<h1>Author Form</h1>
+	<table>
+		<tr>
+			<td>Name:</td> 
+			<td><input type="text" name="name" required="required"/></td>
+		</tr>
+		<tr>
+			<td>Nationality:</td> 
+			<td><input type="text" name="nationality" required="required"/></td>
+		</tr>
+		<tr>
+			<td>Birthdate:</td>
+			<td><input type="date" name="birthdate" placeholder=" yyyy-mm-dd" required="required"/></td>
+		 </tr>
+	</table>
+	<input type="hidden" name="id" value="0"/>
+	<input type="button" value="Save" onclick="sendAuthor()"/></td>
+	
+	
+</form>
+</body>
+</html>

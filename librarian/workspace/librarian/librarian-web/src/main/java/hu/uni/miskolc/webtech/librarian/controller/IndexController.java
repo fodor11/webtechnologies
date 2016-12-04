@@ -16,6 +16,12 @@ public class IndexController {
 		return result;
 	}
 	
+	@RequestMapping(value={"/authorForm"})
+	public ModelAndView authorForm(){
+		ModelAndView result = new ModelAndView("authorForm");
+		return result;
+	}
+	
 	@RequestMapping(value={"/index"})
 	public ModelAndView indexPage(){
 		ModelAndView result = new ModelAndView("index");

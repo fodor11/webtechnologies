@@ -1,6 +1,6 @@
 <script>
 $.getJSON('books', function(data){
-	var table = $('<table></table>');
+	var table = $('<table class="listingTable"></table>');
 	$(table).append('<tr><th>Title</th><th>Genres</th><th>Authors</th></tr>');
 	
 	$.each(data, function(key, value){

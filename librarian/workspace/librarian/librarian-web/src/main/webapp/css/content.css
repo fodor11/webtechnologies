@@ -1,63 +1,99 @@
 @CHARSET "UTF-8";
-	*{
-		margin: 0px;
-		padding: 0px;
-	}
-	
-	body{
-	    background-color: #131311;
-	    margin: 0px;
-	    font-family: Verdana;
-	}
-	
-	#content{
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 30px;
-		width: 800px;
-		color:  #593F2F;
-		background-color: #F2DCC9;
-		border: 0px;
-	}
-	#content p{	
-		padding:10px;
-	}
-	#content h1{
-		font-size: 3em;
-		text-align: center;
-		padding-top : 20px;
-		padding-bottom: 20px;
-	}
-	
-	#content table{
-		
-		border-collapse: collapse;
-		margin: auto;
-		margin-bottom: 20px;
-	}
-	#content th{
-		text-align: left;
-		padding: 10px;
-	}
-	#content table td{
-		padding: 10px;
-	}
-	#content table tr:nth-child(even){
-		background-color: #8C6751;
-		color: white;
-	}
-	#content table tr:nth-child(odd){
-		background-color: #D9AA8F;
-	}
-	#content ul{
-		list-style-type: none;
-	}
-	
-	#footer{
-		text-align: right;
-		font-size: 1.5em;
-		color: #F2DCC9;
-		margin-right: 20px;
-		margin-bottom: 10px;
-	}
-	
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #131311;
+	margin: 0px;
+	font-family: Verdana;
+}
+
+#content {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	width: 800px;
+	color: #593F2F;
+	background-color: #F2DCC9;
+	border: 0px;
+}
+
+#content p {
+	padding: 10px;
+}
+
+#content h1 {
+	font-size: 3em;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#content .listingTable {
+	border-collapse: collapse;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#content  table {
+	border-collapse: collapse;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+
+#content th {
+	text-align: left;
+	padding: 10px;
+}
+
+#content table td {
+	padding: 10px;
+}
+
+#content table tr:nth-child(even) {
+	background-color: #8C6751;
+	color: white;
+}
+
+#content table tr:nth-child(odd) {
+	background-color: #D9AA8F;
+}
+
+#content table tr:HOVER {
+	background-color: #131311;
+	color: white;
+}
+
+.formTable {
+	margin: 0px;
+	margin-top: 10px;
+}
+
+#content ul {
+	list-style-type: none;
+}
+
+#content input[type=button], input[type=submit] {
+	color: white;
+	padding: 8px 32px;
+	background-color: #8C6751;
+	text-decoration: none;
+	margin-left: 30px;
+	cursor: pointer;
+	border: none;
+}
+
+#footer {
+	text-align: right;
+	font-size: 1.5em;
+	color: #F2DCC9;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+#objectId{
+	display: none;
+}

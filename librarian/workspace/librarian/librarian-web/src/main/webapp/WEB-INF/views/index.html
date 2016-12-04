@@ -17,12 +17,13 @@
 		function headerPicResize () {
 			if ((window.innerWidth) > ($('#content').width()))
 			{
-				$('#headerpic').css('width', window.innerWidth);
+				$('#headerpic').css('width', '100%');
 			}
 			else 
 			{
 				$('#headerpic').css('width', $('#content').width());
 			}
+			
 		}
 		window.addEventListener("resize", function(){
 			headerPicResize();
@@ -32,7 +33,6 @@
 			$.each($('.menuButton'), function(mbIndex, mbValue){			
 				$(mbValue).click(function(event){
 					event.preventDefault();
-					//alert($(this).find('a').text()+'--->'+$(this).find('a').attr('href'));
 					$('#content').load($(this).find('a').attr('href') );
 				});
 			});
@@ -45,25 +45,20 @@
 		<div id="pageTitle">Librarian</div>
 		<div id="menuBar">	
 			<div class="menuButton"><a href="authorsTable">Authors</a></div><!-- 
-		 --><div class="menuButton"><a href="booksTable">Books</a></div>
+		 --><div class="menuButton"><a href="booksTable">Books</a></div><!-- 
+		 --><div class="menuButton"><a href="authorForm">A.Form</a></div>
 		</div>
 	</div>
 	<div id="header">
 		<img id="headerpic" alt="headerSkull" src="img/headerSkull.jpg">
 	</div>
 	<div id="content">
-		<h1>Title</h1>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		<p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-		
+		<h1>Librarian homepage</h1>
+		<p>~Just another good-for-nothing site~</p>
 	</div>
 	<div id="footer">
 		<p>By Tamás Fodor</p>
 	</div>
+	<div id="objectId">0</div>
 </body>
 </html>
