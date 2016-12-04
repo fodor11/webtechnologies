@@ -5,6 +5,7 @@
 	var objId;
 	var nextId = 0;
 	
+	//send form in JSON
 	function sendAuthor(){
 		var sendable={};		
 		$('#authorForm').serializeArray().map(function(x){sendable[x.name]=x.value;});
@@ -36,6 +37,8 @@
 		
 		$('#content').load('authorsTable');
 	}
+	
+	//gets yyyy-mm-dd format from JSON date
 	function dateFormatter(data){
 		var ret = data.getFullYear()+'-';
 		if((data.getMonth()+1) < 10)
@@ -57,6 +60,8 @@
 		
 		return ret;
 	}
+	
+	//loading default values
 	$('#context').ready(function(){		
 		objId = $('#objectId').text();
 		$('#objectId').text(0);

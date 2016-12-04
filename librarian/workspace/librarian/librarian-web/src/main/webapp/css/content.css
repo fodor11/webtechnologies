@@ -66,6 +66,11 @@ body {
 #content table tr:HOVER {
 	background-color: #131311;
 	color: white;
+	cursor: pointer;
+}
+#buttonRow{
+	margin: auto;
+	text-align: center;
 }
 
 .formTable {
@@ -89,9 +94,6 @@ body {
 }
 #content input[type=button]:HOVER, input[type=submit]:HOVER, button[type=button]:HOVER {
 	background-color: #694e3d;
-}
-#content button[type=button]{
-	align: right;
 }
 
 #footer {

@@ -13,6 +13,10 @@
 	
 	<script type="text/javascript">
 	
+		function home(){
+			$('#content').html('<h1>Librarian homepage</h1><p>~Just another good-for-nothing site~</p>');
+		}
+	
 		//setting the width for the header picture
 		function headerPicResize () {
 			if ((window.innerWidth) > ($('#content').width()))
@@ -44,7 +48,8 @@
 	<div class="fixed">
 		<div id="pageTitle"><a href="http://localhost:8080/librarian-web/index">Librarian</a></div>
 		<div id="menuBar">	
-			<div class="menuButton"><a href="authorsTable">Authors</a></div><!-- 
+			<div class="menuButton" onclick="home()">Home</div><!--
+		 --><div class="menuButton"><a href="authorsTable">Authors</a></div><!-- 
 		 --><div class="menuButton"><a href="booksTable">Books</a></div><!-- 
 		 --><div class="menuButton"><a href="authorForm">New Author</a></div>
 		</div>

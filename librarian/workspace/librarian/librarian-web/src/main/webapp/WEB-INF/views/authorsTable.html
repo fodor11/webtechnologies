@@ -25,7 +25,7 @@ $.getJSON('authors', function(data){
 	});	
  	$('#content').append("<h1>Authors</h1>");
 	$('#content').append(table);
-	$('#content').append('<button type="button" onclick="saveId(0)">New Author</button>');
+	$('#content').append('<div id="buttonRow"><button type="button" onclick="saveId(0)">New Author</button></div>');
 	
 	 
 });
