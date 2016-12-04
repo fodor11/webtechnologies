@@ -77,7 +77,7 @@ body {
 	list-style-type: none;
 }
 
-#content input[type=button], input[type=submit] {
+#content input[type=button], input[type=submit], button[type=button] {
 	color: white;
 	padding: 8px 32px;
 	background-color: #8C6751;
@@ -85,6 +85,13 @@ body {
 	margin-left: 30px;
 	cursor: pointer;
 	border: none;
+	transition: background 0.3s;
+}
+#content input[type=button]:HOVER, input[type=submit]:HOVER, button[type=button]:HOVER {
+	background-color: #694e3d;
+}
+#content button[type=button]{
+	align: right;
 }
 
 #footer {

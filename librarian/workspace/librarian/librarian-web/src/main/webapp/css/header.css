@@ -24,6 +24,12 @@ img{
 	height: 50px;
 	font-style: italic;
 }
+#pageTitle a{
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	font-style: italic;
+}
 
 #menuBar {
 	width: 800px;
@@ -39,7 +45,7 @@ img{
 #menuBar .menuButton {
 	display: inline-block;
 	position: relative;
-	width: 100px;
+	width: 130px;
 	height: 35px;
 	margin: auto; padding-top : 15px;
 	font-variant: small-caps;

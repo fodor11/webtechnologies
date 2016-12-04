@@ -2,8 +2,39 @@
 <html>
 <head>
 <script>
+	var objId;
+	var nextId = 0;
+	
 	function sendAuthor(){
+		var sendable={};		
+		$('#authorForm').serializeArray().map(function(x){sendable[x.name]=x.value;});
+		var toSend = JSON.stringify(sendable);
+		var action="author/";
+		if(objId == 0)
+		{
+			action +="insert";
+		}
+		else
+		{
+			action +="update";
+		}
 		
+		$.ajax({
+			contentType : 'application/json',
+			type : 'POST',
+			url : action,
+			data : toSend,
+			async: false,
+			processData : false,
+			success : function() {
+				alert('Success');
+			},
+			error : function() {
+				alert('Failure');
+			}
+		});
+		
+		$('#content').load('authorsTable');
 	}
 	function dateFormatter(data){
 		var ret = data.getFullYear()+'-';
@@ -27,28 +58,42 @@
 		return ret;
 	}
 	$('#context').ready(function(){		
-		var objectId = $('#objectId').text();
+		objId = $('#objectId').text();
 		$('#objectId').text(0);
-		if (objectId > 0)
+		if (objId > 0)
 		{
 			$.getJSON('authors', function(data){
 				$.each(data, function(key, value){
-					if (value['authorID'] == objectId)
+					if (value['authorID'] == objId)
 					{
+						$('#action').text('Update Author');
 						$('input[name="name"]').val(value['name']);
-						$('input[name="nationality"]').val(value['nationality']);
-						$('input[name="birthdate"]').val(dateFormatter(new Date(value['birthDate'])));
-						$('input[name="id"]').val(objectId);
-					}					
-				});	
+						$('#nationSelector').val(value['nationality']);
+						$('input[name="birthDate"]').val(dateFormatter(new Date(value['birthDate'])));
+						$('input[name="authorID"]').val(objId);
+						$('input[name="button"]').val('Update');
+					}
+					nextId++;
+				});
 			});			
 		}
+		else
+		{
+			$.getJSON('authors', function(data){
+				$.each(data, function(key, value){
+					nextId++;
+				});
+				nextId++;
+				$('input[name="authorID"]').val(nextId);
+			});			
+		}
+		
 	});
 </script>
 </head>
 <body>
-<form>
-	<h1>Author Form</h1>
+<form id="authorForm">
+	<h1 id="action">New Author</h1>
 	<table>
 		<tr>
 			<td>Name:</td> 
@@ -56,15 +101,23 @@
 		</tr>
 		<tr>
 			<td>Nationality:</td> 
-			<td><input type="text" name="nationality" required="required"/></td>
+			<td>
+				 <select id="nationSelector" name="nationality"  required="required">
+				  <option value="Hungarian">Hungarian</option>
+				  <option value="British">British</option>
+				  <option value="American">American</option>
+				  <option value="Spanish">Spanish</option>
+				  <option value="Russian">Russian</option>
+				</select>
+			</td>
 		</tr>
 		<tr>
 			<td>Birthdate:</td>
-			<td><input type="date" name="birthdate" placeholder=" yyyy-mm-dd" required="required"/></td>
+			<td><input type="date" name="birthDate" placeholder=" yyyy-mm-dd" required="required"/></td>
 		 </tr>
 	</table>
-	<input type="hidden" name="id" value="0"/>
-	<input type="button" value="Save" onclick="sendAuthor()"/></td>
+	<input type="hidden" name="authorID" value="0"/>
+	<input type="button" name="button" value="Create" onclick="sendAuthor()" />
 	
 	
 </form>
