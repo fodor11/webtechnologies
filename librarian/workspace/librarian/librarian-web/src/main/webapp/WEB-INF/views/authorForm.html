@@ -1,7 +1,7 @@
 <!-- authorID, name, nationality, birthDate -->
 <html>
 <head>
-<script>
+<script type="text/javascript">
 	var objId;
 	var nextId = 0;
 	
@@ -39,26 +39,26 @@
 	}
 	
 	//gets yyyy-mm-dd format from JSON date
-	function dateFormatter(data){
-		var ret = data.getFullYear()+'-';
-		if((data.getMonth()+1) < 10)
+	function dateFormatter(JSONdate){
+		var retDate = JSONdate.getFullYear()+'-';
+		if((JSONdate.getMonth()+1) < 10)
 		{
-			ret+=('0'+(data.getMonth()+1)+'-');
+			retDate+=('0'+(JSONdate.getMonth()+1)+'-');
 		}
 		else
 		{
-			ret+=(data.getMonth()+1)+'-';
+			retDate+=(JSONdate.getMonth()+1)+'-';
 		}
-		if(data.getDate()<10)
+		if(JSONdate.getDate()<10)
 		{
-			ret+=('0'+data.getDate());
+			retDate+=('0'+JSONdate.getDate());
 		}
 		else
 		{
-			ret+=(data.getDate());
+			retDate+=(JSONdate.getDate());
 		}
 		
-		return ret;
+		return retDate;
 	}
 	
 	//loading default values
